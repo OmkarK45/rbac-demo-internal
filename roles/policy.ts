@@ -1,28 +1,17 @@
-interface PermissionType {
-	student_res: boolean
-	reviewer_res: boolean
-	admin_res: boolean
-}
+// NOTE: Whenever you're adding a role, rollNo = (topValue - bottomValue / 2)
+
 export interface IPolicy {
-	10: PermissionType
-	5: PermissionType
-	1: PermissionType
+  student: number;
+  reviewer: number;
+  abc: number;
+  interviewer: number;
+  superAdmin: number;
 }
 
 export const policy: IPolicy = {
-	10: {
-		student_res: true,
-		reviewer_res: true,
-		admin_res: true,
-	},
-	5: {
-		student_res: false,
-		reviewer_res: true,
-		admin_res: false,
-	},
-	1: {
-		student_res: true,
-		reviewer_res: false,
-		admin_res: false,
-	},
-}
+  student: 10,
+  reviewer: 20,
+  abc: 25,
+  interviewer: 30,
+  superAdmin: 100,
+};

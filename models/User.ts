@@ -1,21 +1,21 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
 
 export interface IUser {
-	email: string
-	password: string
-	username: string
-	role: 1 | 5 | 8 | 10
+  email: string;
+  password: string;
+  username: string;
+  role: 10 | 20 | 25 | 30 | 100;
 }
 
 const userSchema = new mongoose.Schema({
-	email: { type: String },
-	password: { type: String },
-	username: { type: String },
-	role: {
-		type: Number,
-		enum: [1, 5, 8, 10],
-		default: 1,
-	},
-})
+  email: { type: String },
+  password: { type: String },
+  username: { type: String },
+  role: {
+    type: Number,
+    enum: [10, 20, 25, 30, 100],
+    default: 10,
+  },
+});
 
-export const User = mongoose.model<IUser>('User', userSchema)
+export const User = mongoose.model<IUser>("User", userSchema);
